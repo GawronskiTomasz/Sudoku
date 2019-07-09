@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Game">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:id="@+id/table"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:id="@+id/tableRow1"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/cellGroup1"
+                android:name="com.example.sudoku.ThreexThree"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:tag="0"
+                android:layout_weight="1" />
+
+            <fragment
+                android:id="@+id/cellGroup2"
+                android:name="com.example.sudoku.ThreexThree"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:tag="1"
+                android:layout_weight="1" />
+
+            <fragment
+                android:id="@+id/cellGroup3"
+                android:name="com.example.sudoku.ThreexThree"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:tag="2"
+                android:layout_weight="1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/cellGroup4"
+                android:name="com.example.sudoku.ThreexThree"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:tag="3"
+                android:layout_weight="1" />
+
+            <fragment
+                android:id="@+id/cellGroup5"
+                android:name="com.example.sudoku.ThreexThree"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:tag="4"
+                android:layout_weight="1" />
+
+            <fragment
+                android:id="@+id/cellGroup6"
+                android:name="com.example.sudoku.ThreexThree"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:tag="5"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="117dp">
+
+            <fragment
+                android:id="@+id/cellGroup7"
+                android:name="com.example.sudoku.ThreexThree"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:tag="6"
+                android:layout_weight="1" />
+
+            <fragment
+                android:id="@+id/cellGroup8"
+                android:name="com.example.sudoku.ThreexThree"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:tag="7"
+                android:layout_weight="1" />
+
+            <fragment
+                android:id="@+id/cellGroup9"
+                android:name="com.example.sudoku.ThreexThree"
+                android:layout_width="92dp"
+                android:layout_height="106dp"
+                android:tag="8"
+                android:layout_weight="1" />
+        </TableRow>
+    </TableLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="144dp"
+        android:layout_height="27dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/ll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner">
+
+        <Button
+            android:id="@+id/chooseNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="chooseNumber"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:text="choose number" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="remove"
+            android:text="remove number"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:onClick="checkBoxClicked"
+        android:text="probably"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/checkBoard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll" />
+
+    <Button
+        android:id="@+id/checkBoard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="check_board"
+        android:visibility="invisible"
+        android:onClick="checkBoard"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
